@@ -1,0 +1,25 @@
+<div class="user-card">
+  <img [src]="user.picture.large" alt="Profile image" class="profile-img" />
+
+  <div class="user-data">
+    <h3 class="user-name">{{ user.name.first }} {{ user.name.last }}</h3>
+    <p class="user-gender"><strong>Gender:</strong> {{ user.gender }}</p>
+    <p class="user-location">
+      <strong>Location:</strong> {{ user.location.city }},
+      {{ user.location.country }}
+    </p>
+    <p class="user-email"><strong>Email:</strong> {{ user.email }}</p>
+  </div>
+  <div class="weather-field">
+    <img
+      [src]="getWeatherIcon(user.weather?.current_weather?.weathercode ?? 0)"
+      alt="weather icon"
+      style="width: 50px; height: 50px"
+    />
+    <div class="tem-now">{{ getCurrentTemperature() }}°C</div>
+    <div class="max-min">
+      <div class="tem-min">{{ user.weather?.temperature_min }}°</div>
+      <div class="tem-max">{{ user.weather?.temperature_max }}°</div>
+    </div>
+  </div>
+</div>

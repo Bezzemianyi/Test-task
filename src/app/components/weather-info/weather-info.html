@@ -1,0 +1,7 @@
+<div class="weather" *ngIf="weather">
+  <img [src]="getWeatherIcon(weather.weather_code)" alt="weather icon" />
+  <div>Температура сейчас: {{ weather.temperature_now }}°C</div>
+  <div>
+    Мин: {{ weather.temperature_min }}°C, Макс: {{ weather.temperature_max }}°C
+  </div>
+</div>
